@@ -1,0 +1,28 @@
+<div>
+    <h2>Primer practica: ¿como se manejan los signals?</h2>
+
+    <h3>Signals</h3>
+    <p>precio(): <span>{{precio()}}</span></p>
+    <p>cantidad(): <span>{{cantidad()}}</span></p>
+    <p>total(): <span>{{total()}}</span></p>
+    <p><span>computed()</span> declara que el total <span>depende</span> del precio y la canitdad</p>
+
+    <h3>Propiedades comunes</h3>
+    <p>precioComun: <span>{{precioComun}}</span></p>
+    <p>cantidadComun: <span>{{cantidadComun}}</span></p>
+    <p>totalComun: <span>{{totalComun}}</span></p>
+    <p><span>totalComun</span> es un dato <span>independiente</span>. Hay que calcularlo en cada método</p>
+    <button (click)="calcularTotalComun()">Calcular totalComun</button>
+
+
+    <button (click)="aumentarCantidad()">Sumar 1 a la cantidad</button>
+    <button (click)="bajarCantidad()">Restar 1 a la cantidad</button>
+    <button (click)="cambiarPrecio()">Cambiar precio a 200</button>
+    <button (click)="reiniciar()">Reiniciar</button>
+
+
+    <p>
+        Al cambiar un dato, angular muestra el nuevo precio o la nueva cantidad en ambos ejemplos. La diferencia es que
+        la propiedad <span>totalComun</span> no tiene una relacion declarada con ellos.
+    </p>
+</div>
