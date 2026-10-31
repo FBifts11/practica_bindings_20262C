@@ -15,7 +15,7 @@ export class Signals {
 
   protected precioComun = 100
   protected cantidadComun = 2
-  protected totalComun = 200
+  protected totalComun = this.precioComun * this.cantidadComun
 
   aumentarCantidad():void {
     this.cantidad.update(valorActual => valorActual + 1)

@@ -1,0 +1,14 @@
+<div>
+    <h2>Este es el componente hijo</h2>
+
+    <p>Mensaje recibido desde el padre: <span>{{hijo_recibe_mensaje()}}</span></p>
+    <br>
+
+    <label for="al_padre">Mensaje para el padre:</label>
+    <input type="text" id="al_padre" #entradaHijo [value]="mensaje_desde_hijo()" (input)="actualizar_mensaje_desde_hijo(entradaHijo.value)">
+
+
+    <br><br>
+    <button (click)="incrementar_contador_desde_hijo()">Incrementar contador</button>
+    <button (click)="decrementar_contador_desde_hijo()" [disabled]="esCero()">Decrementar contador</button>
+</div>

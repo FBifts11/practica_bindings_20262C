@@ -1,0 +1,24 @@
+<div>
+    <h2>Este es el componente padre</h2>
+
+    <p>Contador: {{valor_contador()}}</p>
+
+    <button (click)="incrementar_valor()">Incrementar</button>
+    <button (click)="decrementar_valor()" [disabled]=" esCero() ">Decrementar</button>
+    <button (click)="resetear_valor()" [disabled]=" esCero() ">Resetear a 0</button>
+
+    <br><br>
+
+    <label for="al_hijo">Mensaje para el hijo:</label>
+    <input type="text" id="al_hijo" #entradaPadre [value]="mensaje_desde_padre()" (input)="actualizar_mensaje_desde_padre(entradaPadre.value)">
+
+    <p>El mensaje recibido desde el hijo es: <span>{{mensaje_desde_hijo()}}</span></p>
+
+
+    <app-hijo
+    [hijo_recibe_mensaje]="mensaje_desde_padre()"
+    (mensaje)="recibir_mensaje($event)"
+    (incrementar_desde_hijo)="incrementar_valor()"
+    (decrementar_desde_hijo)="decrementar_valor()"
+    [esCero]="esCero()"></app-hijo>
+</div>
